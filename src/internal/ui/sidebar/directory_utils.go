@@ -38,7 +38,7 @@ func fuzzySearch(query string, dirs []directory) []directory {
 
 // Return all sidebar directories
 func getDirectories(pinnedMgr *PinnedManager) []directory {
-	return formDirctorySlice(getWellKnownDirectories(), pinnedMgr.Load(), getExternalMediaFolders())
+	return pinnedMgr.Load() // only pinned directories, no dividers or defaults
 }
 
 // Return system default directory e.g. Home, Downloads, etc
